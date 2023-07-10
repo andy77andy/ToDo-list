@@ -19,11 +19,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
       integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-
-
   <section>
   {% if task_list %}
-
     {% for task in task_list %}
           <p><strong>{{ task.content }}</strong>{% if task.is_done %} <span style="color: green">Done{% else %}</span>
             <span style="color: red">Not Done {% endif %}</span></p>
@@ -37,7 +34,6 @@
             {% endif %}
               <a href="{% url "tasks:task-update" pk=task.id %} ">Update</a>
               <a href="{% url "tasks:task-delete" pk=task.id %} " style="color: red">Delete</a></p>
-
         <div class="d-flex align-items-center">
         <div class="ml-auto">
           {% if task.is_done == False %}
@@ -57,15 +53,11 @@
           {% endif %}
         </div>
       </div>
-{#      </tr>#}
       </section>
     {% endfor %}
       {% else %}
               <p>There are no tasks to perform yet</p>
   {% endif %}
-
-
-{#  </table>#}
 {% endblock %}
 </body>
 </html>
